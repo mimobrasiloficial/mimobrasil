@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja — MIMO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-loja">
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="site-header is-scrolled" id="siteHeader">
+    <a class="header__logo" href="index.html" aria-label="MIMO — página inicial">
+      <img src="assets/img/logo.png" alt="MIMO — Mais que chocolate. Um momento.">
+    </a>
+
+    <nav class="header__nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="loja.html" class="is-active">Loja</a>
+      <a href="criacao.html">Monte seu Mimo</a>
+      <a href="mimo-club.html">Mimo Club</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="header__icon" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <a class="header__icon" href="favoritos.html" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+      </a>
+      <a class="header__account" href="login.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+        <span>Conta</span>
+      </a>
+      <a class="header__cart" href="#" aria-label="Carrinho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="header__cart-count">2</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="store">
+    <!-- ===================== CAMINHO ===================== -->
+    <nav class="breadcrumb" aria-label="Caminho da página">
+      <a href="index.html">Início</a>
+      <span aria-hidden="true">/</span>
+      <span>Loja</span>
+    </nav>
+
+    <div class="store__content">
+      <!-- ===================== PERSONALIZAÇÃO ===================== -->
+      <section class="store__banner">
+        <div class="store__banner-text">
+          <p class="chamada">Primeiro, um pouco de você</p>
+          <h1 class="display">E se o presente tivesse<br>o seu jeito de gostar?</h1>
+          <p class="apoio">Escolhe a caixa, o chocolate e as palavras. O resto vira MIMO.</p>
+          <a href="criacao.html" class="btn btn--primary">
+            Monte seu Mimo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="store__banner-photo">
+          <img src="assets/img/loja-banner.jpg" alt="Montagem de caixa de chocolate MIMO">
+        </div>
+      </section>
+
+      <!-- ===================== ESCOLHA POR SENTIMENTO ===================== -->
+      <section class="store__occasions">
+        <div class="store__occasions-head">
+          <h2 class="display">Qual é o momento?</h2>
+          <p class="apoio">Uma seleção pequena. Um carinho enorme.</p>
+        </div>
+        <div class="occasions" role="group" aria-label="Filtrar por ocasião">
+          <a href="#" class="occasion is-active">Todos os momentos</a>
+          <a href="#" class="occasion">Amor</a>
+          <a href="#" class="occasion">Amizade</a>
+          <a href="#" class="occasion">Comemoração</a>
+          <a href="#" class="occasion">Consolo</a>
+          <a href="#" class="occasion">Conquista</a>
+          <a href="#" class="occasion">Só vontade de chocolate</a>
+        </div>
+      </section>
+
+      <hr class="store__divider">
+
+      <!-- ===================== CATÁLOGO ===================== -->
+      <section class="catalog">
+        <aside class="filters" aria-label="Filtros da loja">
+          <div class="filters__head">
+            <p class="filters__title">Filtrar por</p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+          </div>
+          <p class="filters__note">Organização atual: ocasião</p>
+
+          <div class="filters__group">
+            <p class="filters__label">Mudar organização</p>
+            <a href="#" class="occasion occasion--sm is-active">✓ Por ocasião</a>
+            <a href="#" class="occasion occasion--sm">Por categoria</a>
+          </div>
+
+          <hr class="store__divider">
+
+          <div class="filters__group">
+            <p class="filters__label">Categoria</p>
+            <label class="filter-check"><input type="checkbox"> Caixas personalizáveis</label>
+            <label class="filter-check"><input type="checkbox"> Caixas prontas</label>
+            <label class="filter-check"><input type="checkbox"> Barras</label>
+            <label class="filter-check"><input type="checkbox"> Bombons</label>
+          </div>
+
+          <hr class="store__divider">
+
+          <div class="filters__group">
+            <p class="filters__label">Sabor</p>
+            <label class="filter-check"><input type="checkbox"> Ao leite</label>
+            <label class="filter-check"><input type="checkbox"> Meio amargo / 70%</label>
+            <label class="filter-check"><input type="checkbox"> Branco</label>
+            <label class="filter-check"><input type="checkbox"> Frutados</label>
+            <label class="filter-check"><input type="checkbox"> Recheados</label>
+          </div>
+
+          <hr class="store__divider">
+
+          <div class="filters__group">
+            <p class="filters__label">Preço</p>
+            <a href="#" class="occasion occasion--sm">R$ 19 a R$ 90</a>
+          </div>
+
+          <hr class="store__divider">
+
+          <a href="#" class="filters__clear">Limpar filtros</a>
+        </aside>
+
+        <div class="catalog__products">
+          <div class="catalog__results">
+            <p class="catalog__count">9 Mimos para você</p>
+            <a href="#" class="occasion">Ordenar: nossa seleção ⌄</a>
+          </div>
+
+          <div class="catalog__grid">
+            <!-- Produto 1 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-caixa-mimo.jpg" alt="Caixa Mimo Personalizável">
+                <button class="product__fav" aria-label="Favoritar Caixa Mimo Personalizável">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+                <span class="store-product__badge">Você cria</span>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Caixa Mimo Personalizável</h3>
+                <p class="store-product__desc">12 bombons • do seu jeito</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 89,90</span>
+                  <a href="criacao.html" class="store-product__action">Monte a sua ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 2 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-caixa-amor.jpg" alt="Caixa Pronta Amor">
+                <button class="product__fav" aria-label="Favoritar Caixa Pronta Amor">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+                <span class="store-product__badge">Para dizer eu te amo</span>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Caixa Pronta Amor</h3>
+                <p class="store-product__desc">12 bombons e trufas coração • 180 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 79,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 3 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-caixa-amizade.jpg" alt="Caixa Pronta Amizade">
+                <button class="product__fav" aria-label="Favoritar Caixa Pronta Amizade">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Caixa Pronta Amizade</h3>
+                <p class="store-product__desc">12 pequenos motivos para sorrir • 180 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 69,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 4 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-barra-leite.jpg" alt="Barra Ao Leite">
+                <button class="product__fav" aria-label="Favoritar Barra Ao Leite">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Barra Ao Leite</h3>
+                <p class="store-product__desc">Cremosa, simples, sua • 90 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 19,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 5 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-barra-amargo.jpg" alt="Barra Meio Amargo 70%">
+                <button class="product__fav" aria-label="Favoritar Barra Meio Amargo 70%">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Barra Meio Amargo 70%</h3>
+                <p class="store-product__desc">Cacau em primeiro plano • 90 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 24,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 6 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-barra-branca.jpg" alt="Barra Branca com Frutas Vermelhas">
+                <button class="product__fav" aria-label="Favoritar Barra Branca com Frutas Vermelhas">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Barra Branca com Frutas Vermelhas</h3>
+                <p class="store-product__desc">Doce com um toque de fruta • 90 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 26,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 7 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-bombons-sortidos.jpg" alt="Bombons Sortidos">
+                <button class="product__fav" aria-label="Favoritar Bombons Sortidos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Bombons Sortidos</h3>
+                <p class="store-product__desc">Brigadeiro, doce de leite e avelã • 120 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 39,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 8 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-bombons-morango.jpg" alt="Bombons de Morango">
+                <button class="product__fav" aria-label="Favoritar Bombons de Morango">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Bombons de Morango</h3>
+                <p class="store-product__desc">6 bombons • um carinho por dentro • 90 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 34,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 9 -->
+            <article class="store-product">
+              <div class="store-product__media">
+                <img src="assets/img/loja-bombons-caramelo.jpg" alt="Bombons de Caramelo Salgado">
+                <button class="product__fav" aria-label="Favoritar Bombons de Caramelo Salgado">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+              <div class="store-product__info">
+                <h3 class="store-product__name">Bombons de Caramelo Salgado</h3>
+                <p class="store-product__desc">6 bombons • doce na medida • 90 g</p>
+                <div class="store-product__buy">
+                  <span class="store-product__price">R$ 36,90</span>
+                  <a href="produto.html" class="store-product__action">Ver Mimo ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="catalog__end">Você viu toda a nossa seleção. Agora é só sentir qual combina.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/img/logo.png" alt="MIMO" class="footer__logo">
+        <p class="footer__tagline">Mais que chocolate.<br>Um momento.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <p>contato@mimo.com.br</p>
+        <p>(11) 99999-9999</p>
+        <p>Rua das Flores, 123 — São Paulo, SP</p>
+        <p>Seg a Sex, das 9h às 18h</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Ajuda</h4>
+        <a href="#">Perguntas frequentes</a>
+        <a href="#">Rastrear pedido</a>
+        <a href="#">Trocas e devoluções</a>
+        <a href="#">Fale conosco</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Redes</h4>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="footer__social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          <span>@mimo.chocolate</span>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="footer__social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg>
+          <span>MIMO Chocolates</span>
+        </a>
+        <img src="assets/img/logo.png" alt="Símbolo MIMO" class="footer__symbol">
+      </div>
+    </div>
+
+    <hr class="footer__divider">
+    <div class="footer__legal">
+      <span>© 2026 MIMO — Todos os direitos reservados.</span>
+      <span>Feito com carinho em São Paulo.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
