@@ -449,7 +449,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .value {
   width: 510px;
-  height: 208px;
+  min-height: 208px;
   padding: 32px;
   background: #fff;
   border: 1px solid rgba(203, 159, 119, 0.45);
@@ -583,6 +583,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 1280px) {
   :root { --margin-page: 40px; }
   .products, .section-head, .about, .custom__inner, .values__grid, .moments__head, .moments__gallery, .footer__grid, .store__content, .breadcrumb, .pdp, .pdp__ingredients, .pdp__reviews, .pdp__related { max-width: none; }
+  .values__grid { flex-wrap: wrap; }
+  .value, .value:nth-child(2), .value:nth-child(3) { width: calc(50% - 20px); }
 }
 @media (max-width: 1100px) {
   .header__nav { display: none; }
