@@ -328,3 +328,22 @@ ATENÇÃO — criacao.html foi feita SEM get_design_context:
 - JS: assets/js/criacao.txt → commitado como criacao.js via
   git hash-object + update-index --cacheinfo + skip-worktree.
 ================================================================================
+
+--------------------------------------------------------------------------------
+13. ATUALIZAÇÃO — ajustes finos de UI (fim do dia letivo)
+--------------------------------------------------------------------------------
+- Breadcrumb: margin-top colapsava com a do <main> (gap zero). Trocado
+  para padding-top:40px no .breadcrumb — espaço restaurado em todas as
+  páginas internas (commit a82681f).
+- Instagram oficial: todos os links/@ atualizados para
+  https://www.instagram.com/mimobrasil.oficial/ em todas as páginas
+  (commit 106990e). Facebook ainda está genérico — aguardando URL real.
+- Seção "Nosso jeito de mimar" (Início): .value tinha height fixo 208px
+  e texto vazava → min-height; grid quebra em 2 colunas entre
+  1100–1280px (commit a3d9b59).
+- Último commit: a3d9b59. Site no ar:
+  https://mimobrasiloficial.github.io/mimobrasil/
+- PENDENTE para a próxima sessão: quando o rate limit do Figma MCP
+  resetar, rodar get_design_context no node 9:41834 (Criação) para
+  validar textos/preços/fotos reais das opções — ver seção 12.
+================================================================================
