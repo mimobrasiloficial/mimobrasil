@@ -175,7 +175,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .header__nav a.is-active::after { right: 0; }
 .site-header.is-scrolled .header__nav a { color: var(--color-marrom); }
 .site-header:not(.is-scrolled) .header__nav a { color: var(--color-creme); }
-.site-header:not(.is-scrolled) .header__logo img { filter: brightness(0) invert(1); }
+.page-inicio .site-header:not(.is-scrolled) .header__logo img { filter: brightness(0) invert(1); }
 .site-header:not(.is-scrolled) .header__icon,
 .site-header:not(.is-scrolled) .header__account,
 .site-header:not(.is-scrolled) .header__cart { color: var(--color-creme); }
