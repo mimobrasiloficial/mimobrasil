@@ -291,3 +291,40 @@ sincronizada. Por isso:
 - Filtros/ordenação são visuais por enquanto (sem lógica de filtro real).
 - Commit/push direto no GitHub autorizado pelo usuário nesta tarefa.
 ================================================================================
+
+--------------------------------------------------------------------------------
+12. ATUALIZAÇÃO — Criação • Monte seu Mimo + correções
+--------------------------------------------------------------------------------
+TELAS IMPLEMENTADAS DESDE A LOJA:
+- produto.html        → frame 9:41326 "Produto • Caixa Pronta Amor"
+- produto-barra.html  → frame 9:41496 "Produto • Barra Meio Amargo 70%"
+- produto-bombons.html→ frame 9:41664 "Produto • Bombons de Morango"
+- criacao.html        → frame 9:41834 "Criação • Monte seu Mimo"
+- Novo JS: assets/js/produto.js e assets/js/criacao.js (local: .txt,
+  skip-worktree; .js real só no GitHub — ver seção 10)
+
+REGRAS DE LINK (produto repetido = mesma página):
+- Caixa Pronta Amor → produto.html | Barra Meio Amargo → produto-barra.html
+- Bombons de Morango → produto-bombons.html | Caixa Mimo → criacao.html
+- Produtos sem tela própria voltam para loja.html (não linking errado)
+
+CORREÇÕES DE LAYOUT/CONTRASTE:
+- Containers estavam com max-width 1280px + padding 80px (conteúdo
+  espremido em 1120px) → corrigido para 1440px em todas as seções.
+- Header do Início: hero agora começa no topo (y=0) passando por trás do
+  header transparente → logo/ícones brancos visíveis sobre o hero escuro;
+  após scroll vira creme/marrom. Filtro de logo branco SÓ na página
+  Início (body.page-inicio); demais páginas usam header sempre creme
+  (body.page-loja / .page-criacao).
+
+ATENÇÃO — criacao.html foi feita SEM get_design_context:
+- O Figma MCP estava com rate limit (plano Starter). A estrutura veio de
+  .figma_preview/metadata_page1.xml (geometria real: 4 etapas de opções
+  ilustradas, mensagem opcional, resumo, prévia fixa sticky).
+- Textos e preços das opções são uma interpretação própria — QUANDO o
+  limite resetar, rodar get_design_context no node 9:41834 e comparar
+  copy/preços/imagens reais, e baixar as fotos "Fotografia editorial"
+  das opções (hoje reutilizamos assets/img/loja-*.jpg e produto-*.jpg).
+- JS: assets/js/criacao.txt → commitado como criacao.js via
+  git hash-object + update-index --cacheinfo + skip-worktree.
+================================================================================

@@ -1159,3 +1159,337 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .pdp__reviews-grid { grid-template-columns: 1fr; }
   .catalog__grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Criação • Monte seu Mimo
+   ============================================================ */
+.cria {
+  margin-top: var(--header-height);
+  padding-bottom: 90px;
+}
+.cria + .footer { margin-top: 0; }
+
+/* Cabeçalho sempre creme (não há hero escuro nesta página) */
+.page-criacao .site-header {
+  background: var(--color-creme);
+  box-shadow: 0 1px 0 rgba(203, 159, 119, 0.4);
+}
+.page-criacao .site-header .header__nav a,
+.page-criacao .site-header .header__icon,
+.page-criacao .site-header .header__account,
+.page-criacao .site-header .header__cart { color: var(--color-marrom); }
+
+/* Apresentação */
+.cria__intro {
+  max-width: 980px;
+  margin: 48px auto 0;
+  padding: 0 var(--margin-page);
+}
+.cria__intro-title {
+  font-size: 56px;
+  margin: 27px 0 22px;
+}
+.cria__intro-sub { max-width: 640px; margin-bottom: 12px; }
+.cria__intro-note { font-size: 13px; }
+
+/* Layout: passos + prévia fixa */
+.cria__layout {
+  max-width: 1440px;
+  margin: 56px auto 0;
+  padding: 0 var(--margin-page);
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+.cria__steps { width: 744px; flex-shrink: 0; }
+.cria__preview {
+  width: 488px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 140px;
+}
+
+/* Etapas */
+.cria__step { padding-top: 26px; }
+.cria__step:first-child { padding-top: 0; }
+.cria__step + .cria__step,
+.cria__msg,
+.cria__summary { border-top: 1px solid rgba(203, 159, 119, 0.44); }
+.cria__step + .cria__step { margin-top: 36px; padding-top: 36px; }
+.cria__msg { margin-top: 48px; padding-top: 40px; }
+.cria__summary { margin-top: 48px; padding-top: 40px; }
+
+.cria__step-head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+.cria__step-num {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-bege);
+  color: var(--color-marrom);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cria__step-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-marrom);
+}
+.cria__step-orient .apoio { font-size: 12px; margin-top: 4px; }
+
+/* Opções ilustradas */
+.cria__options {
+  display: grid;
+  grid-template-columns: repeat(4, 174px);
+  gap: 12px;
+}
+.cria__option {
+  width: 174px;
+  padding: 8px;
+  background: var(--color-creme);
+  border: 1px solid rgba(203, 159, 119, 0.55);
+  border-radius: 20px;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.cria__option:hover {
+  border-color: var(--color-marrom);
+  transform: translateY(-2px);
+}
+.cria__option.is-active {
+  border-color: var(--color-marrom);
+  box-shadow: var(--shadow-soft);
+}
+.cria__option-img {
+  display: block;
+  height: 128px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cria__option-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cria__option-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  height: 26px;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-marrom);
+}
+.cria__option-check { width: 16px; height: 16px; flex-shrink: 0; color: var(--color-dourado); }
+.cria__check-mark { display: none; }
+.cria__option.is-active .cria__option-check { color: var(--color-marrom); }
+.cria__option.is-active .cria__check-mark { display: block; }
+
+/* Mensagem opcional */
+.cria__msg-head { display: flex; align-items: center; gap: 16px; }
+.cria__msg-sub { margin-top: 6px; margin-bottom: 26px; }
+.cria__toggle {
+  position: relative;
+  width: 57px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius-btn);
+  background: var(--color-bege);
+  border: 1px solid rgba(203, 159, 119, 0.6);
+  transition: background 0.2s ease;
+}
+.cria__toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-marrom);
+  transition: transform 0.2s ease;
+}
+.cria__toggle.is-on { background: var(--color-marrom); }
+.cria__toggle.is-on .cria__toggle-knob {
+  transform: translateX(25px);
+  background: var(--color-creme);
+}
+.cria__field { margin-bottom: 20px; }
+.cria__field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-marrom);
+  margin-bottom: 8px;
+}
+.cria__input {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 1px solid rgba(203, 159, 119, 0.6);
+  border-radius: var(--radius-input);
+  background: var(--color-creme);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-marrom);
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.cria__input::placeholder { color: rgba(82, 47, 30, 0.45); }
+.cria__input:focus { outline: none; border-color: var(--color-marrom); }
+.cria__input:disabled { opacity: 0.55; }
+.cria__input--area {
+  height: 112px;
+  padding: 16px 20px;
+  resize: vertical;
+}
+.cria__msg-note { font-size: 12px; margin-top: 14px; }
+
+/* Resumo da criação */
+.cria__summary {
+  background: var(--color-bege);
+  border-radius: var(--radius-card);
+  padding: 32px;
+}
+.cria__summary-title {
+  font-size: 34px;
+  margin: 18px 0 14px;
+}
+.cria__summary-desc { max-width: 620px; margin-bottom: 26px; }
+.cria__summary-divider {
+  border: 0;
+  border-top: 1px solid rgba(82, 47, 30, 0.18);
+  margin-bottom: 22px;
+}
+.cria__total {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.cria__total-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-marrom);
+  flex: 1;
+}
+.cria__total-value {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--color-marrom);
+}
+.cria__total-qty {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(82, 47, 30, 0.65);
+  border: 1px solid rgba(82, 47, 30, 0.3);
+  border-radius: var(--radius-btn);
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+.cria__summary-btn {
+  width: 100%;
+  justify-content: center;
+}
+.cria__summary-note { font-size: 12px; margin-top: 16px; text-align: center; }
+
+/* Prévia fixa */
+.cria__preview-card {
+  background: var(--color-creme);
+  border: 1px solid rgba(203, 159, 119, 0.4);
+  border-radius: var(--radius-card);
+  padding: 26px;
+}
+.cria__preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.cria__preview-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-dourado);
+}
+.cria__preview-head svg { width: 18px; height: 18px; color: var(--color-dourado); }
+.cria__preview-img {
+  height: 360px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.cria__preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cria__preview-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-marrom);
+  margin-top: 24px;
+}
+.cria__preview-desc { font-size: 13px; margin-top: 10px; }
+.cria__bilhete {
+  margin-top: 24px;
+  padding: 22px;
+  background: var(--color-creme);
+  border: 1px dashed rgba(203, 159, 119, 0.8);
+  border-radius: 20px;
+}
+.cria__bilhete .chamada { margin-bottom: 10px; display: block; }
+.cria__bilhete-text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-marrom);
+}
+.cria__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.cria__price-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-dourado);
+}
+.cria__price-value {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--color-marrom);
+}
+.cria__preview-note { font-size: 12px; margin-top: 14px; }
+
+/* Criação — responsivo */
+@media (max-width: 1100px) {
+  .cria__layout { flex-direction: column; }
+  .cria__steps { width: 100%; }
+  .cria__preview { width: 100%; position: static; }
+  .cria__options { grid-template-columns: repeat(2, 174px); }
+}
+@media (max-width: 700px) {
+  .cria__intro-title { font-size: 40px; }
+  .cria__options { grid-template-columns: 1fr; }
+  .cria__option { width: 100%; }
+  .cria__summary { padding: 24px; }
+}
