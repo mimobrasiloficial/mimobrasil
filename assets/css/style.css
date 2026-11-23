@@ -218,7 +218,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ============================================================
    Hero — vídeo placeholder (900px)
    ============================================================ */
-.hero { position: relative; height: 900px; margin-top: var(--header-height); }
+.hero { position: relative; height: 900px; }
 .hero__media, .hero__placeholder {
   position: absolute;
   inset: 0;
