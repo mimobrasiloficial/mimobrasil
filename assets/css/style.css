@@ -6,6 +6,7 @@
   --color-marrom: #522F1E;
   --color-dourado: #CB9F77;
   --color-bege: #E8D0BA;
+  --color-rosado: #F4E4DD;
 
   --font-display: "EB Garamond", Georgia, serif;
   --font-ui: "Montserrat", system-ui, sans-serif;
@@ -92,6 +93,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: transparent;
 }
 .btn--ghost:hover { background: var(--color-bege); }
+
+.btn--line {
+  border: 1px solid var(--color-marrom);
+  color: var(--color-marrom);
+  background: transparent;
+}
+.btn--line:hover { background: var(--color-bege); box-shadow: none; }
 
 .btn--sm {
   height: 40px;
@@ -855,5 +863,284 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .catalog__grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
+  .catalog__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Produto (página de detalhe)
+   ============================================================ */
+.product-page {
+  margin-top: var(--header-height);
+  padding-bottom: 80px;
+}
+.product-page + .footer { margin-top: 0; }
+.store + .footer { margin-top: 0; }
+
+.pdp {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px var(--margin-page) 64px;
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+/* Galeria */
+.pdp__gallery { width: 660px; flex-shrink: 0; }
+.pdp__main {
+  background: var(--color-rosado);
+  border-radius: var(--radius-card);
+  padding: 20px;
+}
+.pdp__main img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+.pdp__thumbs { display: flex; gap: 16px; margin-top: 18px; }
+.pdp__thumb {
+  flex: 1;
+  min-width: 0;
+  border: 2px solid transparent;
+  border-radius: 26px;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.pdp__thumb img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.pdp__thumb.is-active { border-color: var(--color-marrom); padding: 4px; }
+.pdp__thumb.is-active img { height: 130px; border-radius: 18px; }
+.pdp__thumb:hover { border-color: rgba(203, 159, 119, 0.8); }
+
+/* Informações e compra */
+.pdp__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.pdp__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 62px;
+  line-height: 1.06;
+  letter-spacing: -0.8px;
+  color: var(--color-marrom);
+}
+.pdp__rating { font-size: 12px; }
+.pdp__stars { color: var(--color-dourado); letter-spacing: 2px; }
+.pdp__desc { font-size: 16px; line-height: 1.6; }
+.pdp__option { align-self: flex-start; }
+
+.pdp__price { display: flex; flex-direction: column; gap: 4px; }
+.pdp__value {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+}
+.pdp__note { font-size: 11px; color: rgba(82, 47, 30, 0.65); }
+
+.pdp__buy { display: flex; gap: 14px; align-items: stretch; }
+.pdp__qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  height: 54px;
+  padding: 0 22px;
+  border: 1px solid var(--color-dourado);
+  border-radius: var(--radius-btn);
+  flex-shrink: 0;
+}
+.pdp__qty button {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-marrom);
+  transition: color 0.2s;
+}
+.pdp__qty button:hover { color: var(--color-dourado); }
+.pdp__qty-value { font-size: 14px; font-weight: 600; min-width: 12px; text-align: center; }
+.pdp__cart { flex: 1; justify-content: center; }
+
+.pdp__save {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-marrom);
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+.pdp__save svg { width: 20px; height: 20px; }
+.pdp__save:hover { color: #c25e5e; }
+.pdp__save.is-active { color: #c25e5e; }
+.pdp__save.is-active svg { fill: #c25e5e; }
+
+.pdp__divider {
+  border: 0;
+  border-top: 1px solid rgba(203, 159, 119, 0.44);
+}
+.pdp__points {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.pdp__points svg { width: 22px; height: 22px; color: var(--color-dourado); flex-shrink: 0; }
+.pdp__perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pdp__perks li {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(82, 47, 30, 0.7);
+  padding-left: 14px;
+  position: relative;
+}
+.pdp__perks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-dourado);
+}
+
+/* Notas do sabor */
+.pdp__notes {
+  background: var(--color-rosado);
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  padding: 48px var(--margin-page);
+}
+.pdp__notes-feel { width: 450px; flex-shrink: 0; }
+.pdp__notes-feel .chamada { margin-bottom: 16px; display: block; }
+.pdp__notes-title {
+  font-family: var(--font-display);
+  font-size: 46px;
+  line-height: 1.06;
+  letter-spacing: -0.8px;
+  color: var(--color-marrom);
+}
+.pdp__notes-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pdp__notes-text { font-size: 16px; line-height: 1.6; }
+.pdp__notes-small { font-size: 12px; line-height: 1.6; color: rgba(82, 47, 30, 0.7); }
+
+/* Ingredientes e cuidado */
+.pdp__ingredients {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px var(--margin-page);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.pdp__ing-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.pdp__ing-title { font-size: 40px; }
+.pdp__sheet { display: flex; gap: 56px; align-items: flex-start; }
+.pdp__sheet-col { display: flex; flex-direction: column; gap: 22px; }
+.pdp__sheet-col:first-child { width: 230px; flex-shrink: 0; }
+.pdp__sheet-col p { font-size: 13px; line-height: 1.6; }
+.pdp__sheet-label { font-weight: 600; }
+.pdp__sheet-care {
+  width: 270px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+.pdp__sheet-care svg { width: 22px; height: 22px; color: var(--color-dourado); }
+.pdp__sheet-care p { font-size: 12px; line-height: 1.6; color: rgba(82, 47, 30, 0.75); }
+
+/* Avaliações */
+.pdp__reviews {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px var(--margin-page) 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.pdp__reviews-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.pdp__reviews-note { font-size: 12px; color: rgba(82, 47, 30, 0.65); }
+.pdp__reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.pdp__review {
+  background: var(--color-bege);
+  border-radius: 28px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.pdp__review-stars { color: var(--color-dourado); font-size: 12px; letter-spacing: 2px; }
+.pdp__review blockquote {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.06;
+  letter-spacing: -0.8px;
+  color: var(--color-marrom);
+}
+.pdp__review figcaption { font-size: 12px; color: rgba(82, 47, 30, 0.7); }
+
+/* Produtos relacionados */
+.pdp__related {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--margin-page) 80px;
+}
+.pdp__related .section-head { margin-bottom: 38px; }
+.pdp__related .section-head .display { font-size: 40px; margin-top: 25px; }
+
+/* Produto — responsivo */
+@media (max-width: 1100px) {
+  .pdp { flex-direction: column; gap: 48px; }
+  .pdp__gallery { width: 100%; }
+  .pdp__notes { flex-direction: column; gap: 32px; }
+  .pdp__notes-feel { width: 100%; }
+  .pdp__sheet { flex-wrap: wrap; gap: 32px; }
+  .pdp__sheet-col:first-child { width: 100%; flex-direction: row; flex-wrap: wrap; gap: 12px 32px; }
+  .pdp__sheet-care { width: 100%; }
+  .catalog__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .pdp__title { font-size: 44px; }
+  .pdp__buy { flex-direction: column; }
+  .pdp__cart { width: 100%; }
+  .pdp__reviews-grid { grid-template-columns: 1fr; }
   .catalog__grid { grid-template-columns: 1fr; }
 }
