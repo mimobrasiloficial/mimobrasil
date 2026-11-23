@@ -2,7 +2,8 @@
 CONTEXTO DO PROJETO — Site MIMO (TCC)
 ================================================================================
 Data da análise: 16/11/2026
-Status: ANÁLISE FIGMA CONCLUÍDA — AGUARDANDO AUTORIZAÇÃO PARA PROGRAMAR
+Status: EM DESENVOLVIMENTO — página Início implementada
+         (ver seção 9 — ATUALIZAÇÃO 23/11/2026)
 
 --------------------------------------------------------------------------------
 1. O QUE É ESTE PROJETO
@@ -181,4 +182,78 @@ Antes de gerar código de uma tela:
 - Vídeo da home é placeholder — decidir com o usuário como tratar
 - Só existe design desktop 1440px — responsividade/mobile é decisão
   de implementação a alinhar com o usuário
+================================================================================
+
+================================================================================
+9. ATUALIZAÇÃO — 23/11/2026 (novo computador / retomada)
+================================================================================
+
+O QUE MUDOU DESDE 16/11:
+
+- STACK DEFINIDA: HTML + CSS + JS puro (site estático, sem build).
+  Decisão do usuário — facilita edição colaborativa no VS Code.
+
+- REPOSITÓRIO GIT CRIADO E PRIMEIRO PUSH FEITO:
+    URL:      https://github.com/mimobrasiloficial/mimobrasil
+    Conta:    mimobrasiloficial (NÃO ManelCamarg — credencial git foi
+              trocada nesta máquina; Windows Credential Manager)
+    Branch:   main
+    Commit:   8978c0e "Estrutura inicial do site MIMO"
+    Obs.:     pasta local NÃO estava em git antes; git init feito em
+              23/11. .gitignore ignora Thumbs.db/Desktop.ini/*.log.
+
+- TRABALHO COLABORATIVO (Live Share):
+    - Usuário e amigo editam a MESMA pasta via VS Code Live Share.
+    - O amigo trabalha no VS Code dele; o Devin trabalha aqui.
+    - REGRA: Devin SÓ faz commit/push quando o usuário pedir
+      explicitamente. Nunca por iniciativa própria.
+
+- PÁGINA INÍCIO IMPLEMENTADA (primeira tela do projeto):
+    index.html + assets/css/style.css + assets/js/main.js
+    - Header fixo 116px transparente → creme após scroll (JS em main.js)
+    - Hero 900px: placeholder de vídeo com botão play (sem vídeo real)
+    - Seção "Monte seu Mimo" com ondulação SVG e card "Nota afetuosa"
+    - "Pequenos favoritos": 3 cards de produto (Bombons de Morango,
+      Barra Meio Amargo 70%, Caixa Pronta Amor)
+    - "Um pouco sobre nós", "Nosso jeito de mimar" (3 valores),
+      "Momentos compartilhados" (Instagram + galeria 4 fotos)
+    - Rodapé completo (marca, contato, ajuda, redes, notas legais)
+    - CSS: design tokens do Figma (#FFFDF5/#522F1E/#CB9F77/#E8D0BA,
+      EB Garamond + Montserrat, margens 80px, botões 54px, cards 32px)
+    - SEM CSS/JS inline — tudo externo (exigência do usuário)
+
+- PENDÊNCIAS / LIMITAÇÕES:
+    - PLACEHOLDERS DE FOTO: só temos 4 assets reais (logo + 3 fotos).
+      Falta baixar do Figma: foto "Caixa em criação", produtos
+      Barra 70% e Caixa Pronta Amor, 4 fotos da galeria Instagram,
+      e todas as fotos das demais telas.
+      Marcados com <!-- TODO --> e classes .ph-1 a .ph-4 no CSS.
+    - TEXTOS: copy da página foi escrita em PT-BR plausível (XML do
+      Figma só tem nomes de camadas, não conteúdo). REVISAR com o
+      usuário / textos reais do Figma.
+    - FIGMA MCP: tool calls (create_session, get_metadata etc.)
+      retornam "Failed to connect" nesta máquina — leitura de
+      resources funciona, tools não. OAuth existe mas conexão de
+      tools está zumbi. Pendente: reautenticar plugin Figma na UI
+      do Devin Desktop ou reiniciar o app. Rate limit Starter
+      ainda não verificado.
+    - Links internos (loja.html, criacao.html, etc.) apontam para
+      páginas ainda não criadas.
+
+- PRÓXIMOS PASSOS SUGERIDOS:
+    1. Revisar textos/visual da página Início com o usuário
+    2. Página Loja (próxima da ordem sugerida na seção 7)
+    3. Quando Figma MCP voltar: baixar assets reais e substituir
+       placeholders; recuperar previews pendentes (Checkout
+       Entrega/Pagamento/Confirmação + header pós-scroll)
+
+- ESTRUTURA ATUAL DA PASTA:
+    index.html
+    assets/css/style.css
+    assets/js/main.js
+    assets/img/  (logo.png, inicio-foto-1.jpg, produto-bombons.jpg,
+                  sobre-foto-1.jpg)
+    .figma_preview/  (referências do Figma — NÃO apagar)
+    Modelos/         (PNGs de referência adicionais)
+    CONTEXTO_PROJETO.txt  (este arquivo)
 ================================================================================
