@@ -1,0 +1,585 @@
+/* ============================================================
+   MIMO — Design tokens (extraídos do Figma)
+   ============================================================ */
+:root {
+  --color-creme: #FFFDF5;
+  --color-marrom: #522F1E;
+  --color-dourado: #CB9F77;
+  --color-bege: #E8D0BA;
+
+  --font-display: "EB Garamond", Georgia, serif;
+  --font-ui: "Montserrat", system-ui, sans-serif;
+
+  --margin-page: 80px;
+  --header-height: 116px;
+
+  --radius-btn: 999px;
+  --radius-input: 24px;
+  --radius-card: 32px;
+
+  --shadow-soft: 0 12px 40px rgba(82, 47, 30, 0.10);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-marrom);
+  background: var(--color-creme);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+/* Tipografia hierárquica do design system */
+.chamada {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-dourado);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: var(--color-marrom);
+}
+
+.apoio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-marrom);
+}
+.apoio--muted { opacity: 0.75; }
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 54px;
+  padding: 0 28px;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--color-marrom);
+  color: var(--color-creme);
+}
+.btn--primary:hover { box-shadow: var(--shadow-soft); }
+
+.btn--ghost {
+  border: 1.5px solid var(--color-dourado);
+  color: var(--color-marrom);
+  background: transparent;
+}
+.btn--ghost:hover { background: var(--color-bege); }
+
+.btn--sm {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 12px;
+  border-radius: var(--radius-btn);
+  background: var(--color-bege);
+  color: var(--color-marrom);
+}
+.btn--sm:hover { background: var(--color-dourado); }
+
+/* Placeholder de fotografia (substituir por <img> quando assets forem baixados) */
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--ph-a, #E8D0BA), var(--ph-b, #CB9F77));
+  border-radius: var(--radius-card);
+  color: var(--color-marrom);
+  font-family: var(--font-display);
+  font-size: 20px;
+  opacity: 0.85;
+}
+.photo-placeholder span { opacity: 0.7; }
+
+/* Variações de cor dos placeholders (substituir por <img> quando os assets forem baixados) */
+.ph-1 { --ph-a: #E8D0BA; --ph-b: #CB9F77; }
+.ph-2 { --ph-a: #CB9F77; --ph-b: #522F1E; }
+.ph-3 { --ph-a: #522F1E; --ph-b: #CB9F77; color: var(--color-creme); }
+.ph-4 { --ph-a: #CB9F77; --ph-b: #E8D0BA; }
+
+/* ============================================================
+   Cabeçalho
+   ============================================================ */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 64px;
+  z-index: 100;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+.site-header.is-scrolled {
+  background: var(--color-creme);
+  box-shadow: 0 1px 0 rgba(203, 159, 119, 0.4);
+}
+
+.header__logo img { height: 104px; width: auto; }
+
+.header__nav {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.header__nav a { position: relative; padding: 6px 0; transition: color 0.2s; }
+.header__nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: 0;
+  height: 1.5px;
+  background: var(--color-dourado);
+  transition: right 0.25s ease;
+}
+.header__nav a:hover::after,
+.header__nav a.is-active::after { right: 0; }
+.site-header.is-scrolled .header__nav a { color: var(--color-marrom); }
+.site-header:not(.is-scrolled) .header__nav a { color: var(--color-creme); }
+.site-header:not(.is-scrolled) .header__icon,
+.site-header:not(.is-scrolled) .header__account,
+.site-header:not(.is-scrolled) .header__cart { color: var(--color-creme); }
+
+.header__actions { display: flex; align-items: center; gap: 20px; }
+
+.header__icon,
+.header__account,
+.header__cart {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-marrom);
+  transition: color 0.2s;
+}
+.header__icon svg,
+.header__account svg,
+.header__cart svg { width: 22px; height: 22px; }
+.header__icon:hover, .header__account:hover, .header__cart:hover { color: var(--color-dourado); }
+
+.header__account { gap: 8px; font-size: 13px; font-weight: 500; }
+
+.header__cart { position: relative; }
+.header__cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--color-dourado);
+  color: var(--color-creme);
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   Hero — vídeo placeholder (900px)
+   ============================================================ */
+.hero { position: relative; height: 900px; margin-top: var(--header-height); }
+.hero__media, .hero__placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #3a2417 0%, #522F1E 55%, #6b3f24 100%);
+}
+.hero__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__play {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(255, 253, 245, 0.14);
+  border: 1.5px solid rgba(255, 253, 245, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-creme);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.hero__play svg { width: 30px; height: 30px; margin-left: 4px; }
+.hero__play:hover { transform: scale(1.08); background: rgba(255, 253, 245, 0.22); }
+
+/* ============================================================
+   Monte seu Mimo (y900 → ondulação → fundo creme)
+   ============================================================ */
+.custom { position: relative; background: linear-gradient(180deg, #4a2c1b 0%, #522F1E 30%, #6b3f24 100%); padding-bottom: 76px; }
+.custom__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 114px var(--margin-page) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.custom__text { width: 500px; color: var(--color-creme); }
+.custom__text .chamada { color: var(--color-dourado); }
+.custom__text .display { color: var(--color-creme); font-size: 64px; margin: 39px 0 26px; }
+.custom__text .apoio { color: rgba(255, 253, 245, 0.85); margin-bottom: 25px; }
+.custom__text .apoio--muted { font-size: 13px; opacity: 0.7; margin-bottom: 44px; }
+
+.custom__details {
+  margin-top: 27px;
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  color: rgba(255, 253, 245, 0.75);
+}
+.custom__details span + span { padding-left: 24px; border-left: 1px solid rgba(203, 159, 119, 0.5); }
+.custom__details span:first-child { padding-left: 0; border-left: 0; }
+
+.custom__photo {
+  position: relative;
+  width: 710px;
+  height: 490px;
+}
+.custom__photo .photo-placeholder { border-radius: var(--radius-card); height: 490px; }
+
+.custom__note {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  width: 333px;
+  min-height: 94px;
+  background: var(--color-creme);
+  border-radius: var(--radius-card);
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-soft);
+}
+.custom__note svg { width: 28px; height: 28px; color: var(--color-dourado); flex-shrink: 0; }
+.custom__note p {
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--color-marrom);
+}
+
+.custom__wave {
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  width: 100%;
+  height: 76px;
+  display: block;
+}
+
+/* ============================================================
+   Pequenos favoritos
+   ============================================================ */
+.favorites { padding: 80px var(--margin-page) 0; }
+
+.section-head {
+  max-width: 1280px;
+  margin: 0 auto 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.section-head__text { width: 730px; }
+.section-head .display { font-size: 40px; margin-top: 27px; }
+.section-head .apoio { margin-top: 11px; }
+
+.products {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 28px;
+}
+
+.product {
+  width: 408px;
+  flex-shrink: 0;
+}
+.product__media {
+  position: relative;
+  width: 408px;
+  height: 300px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-bege);
+}
+.product__media img { width: 100%; height: 100%; object-fit: cover; }
+.product__media .photo-placeholder { border-radius: 0; height: 100%; }
+
+.product__fav {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 253, 245, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-marrom);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.product__fav svg { width: 20px; height: 20px; }
+.product__fav:hover { transform: scale(1.1); color: #c25e5e; }
+.product__fav.is-active { color: #c25e5e; }
+.product__fav.is-active svg { fill: #c25e5e; }
+
+.product__badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  height: 28px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--color-dourado);
+  color: var(--color-creme);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.product__info { padding-top: 16px; }
+.product__name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-marrom);
+}
+.product__desc {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(82, 47, 30, 0.7);
+}
+.product__buy {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product__price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   Um pouco sobre nós
+   ============================================================ */
+.about {
+  max-width: 1280px;
+  margin: 80px auto 0;
+  padding: 0 var(--margin-page);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about__photo {
+  width: 580px;
+  height: 460px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.about__photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.about__text { width: 620px; }
+.about__text .display { font-size: 44px; margin: 39px 0 26px; }
+.about__text .apoio { margin-bottom: 19px; }
+.about__text .apoio--muted { font-size: 13px; opacity: 0.7; margin-bottom: 37px; }
+
+/* ============================================================
+   Nosso jeito de mimar
+   ============================================================ */
+.values { padding: 90px var(--margin-page) 0; }
+.values > .chamada { display: block; max-width: 1280px; margin: 0 auto 55px; }
+
+.values__grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+}
+
+.value {
+  width: 510px;
+  height: 208px;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid rgba(203, 159, 119, 0.45);
+  border-radius: var(--radius-card);
+}
+.value:nth-child(2), .value:nth-child(3) { width: 345px; }
+.value svg { width: 32px; height: 32px; color: var(--color-dourado); margin-bottom: 18px; }
+.value h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+.value p { font-size: 12px; line-height: 1.65; opacity: 0.75; }
+
+/* ============================================================
+   Momentos compartilhados
+   ============================================================ */
+.moments { padding: 80px var(--margin-page) 0; }
+
+.moments__head {
+  max-width: 1280px;
+  margin: 0 auto 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.moments__invite { width: 900px; }
+.moments__invite .display { font-size: 40px; margin-top: 25px; }
+.moments__invite .apoio { margin-top: 12px; }
+
+.moments__instagram {
+  width: 30px;
+  height: 30px;
+  margin-top: 80px;
+  color: var(--color-marrom);
+  transition: color 0.2s;
+}
+.moments__instagram svg { width: 100%; height: 100%; }
+.moments__instagram:hover { color: var(--color-dourado); }
+
+.moments__gallery {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+.moments__gallery .photo-placeholder {
+  flex: 1;
+  height: 290px;
+  border-radius: var(--radius-card);
+}
+
+/* ============================================================
+   Rodapé
+   ============================================================ */
+.footer {
+  margin-top: 100px;
+  padding: 56px var(--margin-page) 35px;
+  background: var(--color-marrom);
+  color: var(--color-creme);
+}
+
+.footer__grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer__brand { width: 255px; }
+.footer__logo { height: 152px; width: auto; filter: brightness(0) invert(1); opacity: 0.95; }
+.footer__tagline {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.footer__col { font-size: 13px; line-height: 1.5; }
+.footer__col h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-dourado);
+  margin-bottom: 12px;
+}
+.footer__col p { margin-bottom: 12px; opacity: 0.85; }
+.footer__col a { display: block; margin-bottom: 12px; opacity: 0.85; transition: opacity 0.2s; }
+.footer__col a:hover { opacity: 1; color: var(--color-dourado); }
+
+.footer__social {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+.footer__social svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+.footer__symbol {
+  width: 56px;
+  height: 56px;
+  margin-top: 20px;
+  border-radius: 50%;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.footer__divider {
+  max-width: 1280px;
+  margin: 42px auto 0;
+  border: 0;
+  border-top: 1px solid rgba(203, 159, 119, 0.35);
+}
+
+.footer__legal {
+  max-width: 1280px;
+  margin: 37px auto 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   Responsivo (o design só tem desktop 1440px — ajustes mínimos)
+   ============================================================ */
+@media (max-width: 1280px) {
+  :root { --margin-page: 40px; }
+  .products, .section-head, .about, .values__grid, .moments__head, .moments__gallery, .footer__grid { max-width: none; }
+}
+@media (max-width: 1100px) {
+  .header__nav { display: none; }
+  .custom__inner, .about { flex-direction: column; }
+  .custom__text, .about__text { width: 100%; margin-bottom: 48px; }
+  .custom__photo { width: 100%; }
+  .values__grid { flex-direction: column; }
+  .value, .value:nth-child(2), .value:nth-child(3) { width: 100%; }
+  .footer__grid { flex-wrap: wrap; }
+  .display { font-size: 40px; }
+}

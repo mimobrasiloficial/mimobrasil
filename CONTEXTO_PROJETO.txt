@@ -1,0 +1,184 @@
+================================================================================
+CONTEXTO DO PROJETO — Site MIMO (TCC)
+================================================================================
+Data da análise: 16/11/2026
+Status: ANÁLISE FIGMA CONCLUÍDA — AGUARDANDO AUTORIZAÇÃO PARA PROGRAMAR
+
+--------------------------------------------------------------------------------
+1. O QUE É ESTE PROJETO
+--------------------------------------------------------------------------------
+Site de e-commerce de chocolate artesanal chamado "MIMO"
+(slogan: "Mais que chocolate. Um momento.") — projeto de TCC.
+
+Funcionalidades do site:
+- Loja de produtos (chocolates, bombons, barras)
+- Personalização de produtos ("Monte seu Mimo" — wizard guiado)
+- Programa de fidelidade ("Mimo Club" — saldo, progresso, benefícios)
+- Carrinho lateral (drawer)
+- Checkout em 4 etapas (Dados → Entrega → Pagamento → Confirmação)
+- Conta do cliente (login, cadastro, área logada, favoritos)
+- Página institucional (Sobre)
+
+--------------------------------------------------------------------------------
+2. ARQUIVO FIGMA
+--------------------------------------------------------------------------------
+- URL:  https://www.figma.com/design/hOYTA6wFixdgxlNrEONDNE/Sem-título
+- fileKey: hOYTA6wFixdgxlNrEONDNE
+- Página única: "Page 1" (nodeId 0:1)
+- 19 frames de tela, todos com 1440px de largura (desktop only)
+- Nomes dos elementos em português — usar os nomes originais como referência
+- Conta Figma autenticada: Emanuel Camargo (plano Starter)
+
+TELAS (frame → nodeId):
+  Início • Sua história em chocolate        9:40930  (4310px altura)
+  Início • Cabeçalho após rolagem           9:43720  (960px — VARIANTE DE ESTADO)
+  Loja • Encontre seu momento               9:41089  (2728px)
+  Produto • Caixa Pronta Amor               9:41326  (2973px)
+  Produto • Barra Meio Amargo 70%           9:41496  (3015px)
+  Produto • Bombons de Morango              9:41664  (2994px)
+  Criação • Monte seu Mimo                  9:41834  (3305px — wizard)
+  Mimo Club • Entre para criar mais         9:42076  (1614px)
+  Mimo Club • Seu carinho rende              9:42161  (2812px)
+  Acesso • Login                            9:42329  (1374px)
+  Acesso • Cadastro                         9:42412  (1637px)
+  Minha conta • Lia Martins                 9:42518  (2078px)
+  Carrinho • Lateral aberto na loja         9:42666  (1740px — VARIANTE COM DRAWER)
+  Checkout • Dados                          9:42859  (1608px)
+  Checkout • Entrega                        9:43001  (1985px)
+  Checkout • Pagamento                      9:43179  (1922px)
+  Checkout • Confirmação                    9:43339  (1838px)
+  Sobre • Mais que chocolate. Um momento.   9:43488  (4530px)
+  Favoritos • Carinhos guardados            9:43610  (1585px)
+
+--------------------------------------------------------------------------------
+3. DESIGN SYSTEM IDENTIFICADO
+--------------------------------------------------------------------------------
+FONTES (Google Fonts — importar via CDN):
+  - EB Garamond: títulos/display (56–64px, tracking -0.8px)
+  - Montserrat: texto/UI (pesos Regular, Medium, SemiBold; 10–14px)
+
+CORES:
+  - #FFFDF5  creme (fundo principal)
+  - #522F1E  marrom escuro (textos e botões)
+  - #CB9F77  dourado/bege (bordas e acentos)
+  - #E8D0BA  bege claro (cards)
+
+PADRÕES:
+  - Layout: margens laterais de 80px, header com px 64px
+  - Botões: 54px altura, bem arredondados
+  - Inputs: min-height 56px, border-radius 24px
+  - Cards: border-radius 32px
+  - Hierarquia: "Chamada" (uppercase 11px tracking 2px) → Título → apoio
+  - Header fixo 116px; vira "creme" após scroll (frame dedicado 9:43720)
+
+ASSETS:
+  - Logo: PNG 4167×4167 ("Logo oficial com slogan" / "Símbolo oficial")
+  - Fotos: fills raster JPEG/PNG ~70–110 imagens únicas (compartilhadas
+    entre telas — mesmos produtos aparecem em Loja, Carrinho, Favoritos,
+    Checkout). Todas extraíveis via download_assets.
+  - Ícones: SVGs estilo Lucide (search, heart, user-round, shopping-bag,
+    arrow-right, play, instagram, facebook, lock-keyhole, circle-check...)
+  - Vídeo: apenas placeholder visual na home — NÃO há vídeo real
+  - Sem design tokens formais (variables) — estilos aplicados direto
+
+--------------------------------------------------------------------------------
+4. O QUE JÁ FOI FEITO (NESTA MÁQUINA)
+--------------------------------------------------------------------------------
+Pasta .figma_preview/ contém:
+  - metadata_page1.xml → árvore completa do arquivo (todos os nós)
+  - 13 PNGs full-page de referência visual (ver README.md na pasta)
+  - assets/ → amostras verificadas: logo, 3 fotos
+  - README.md → inventário detalhado
+
+PENDENTE (rate limit do plano Starter do Figma MCP — retomar depois):
+  - Preview/assets de: Checkout Entrega, Pagamento, Confirmação
+    e a variante "Início • Cabeçalho após rolagem"
+  - Solução: esperar reset do limite (janela diária) ou upgrade do plano
+
+--------------------------------------------------------------------------------
+5. CONFIGURAÇÃO DO FIGMA MCP NO DEVIN — OUTROS COMPUTADORES
+--------------------------------------------------------------------------------
+O Devin NÃO usa a nuvem para este projeto — tudo roda local via Devin Desktop.
+Para configurar o Figma MCP em outro computador:
+
+PASSO 1 — Abrir terminal e rodar (o executável devin.exe NÃO está no PATH;
+usar o caminho completo):
+
+  "C:\Users\<USUARIO>\AppData\Local\Programs\Devin\resources\app\extensions\windsurf\devin\bin\devin.exe" mcp add -s user figma-remote https://mcp.figma.com/mcp
+
+  (-s user = configuração global, vale para todos os projetos;
+   sem -s grava em .devin/mcp_config.local.json do projeto)
+
+PASSO 2 — Autenticar via OAuth (abre o navegador):
+
+  "<mesmo caminho>\devin.exe" mcp login figma-remote
+
+  Na página do Figma: login na conta → Allow → redirect localhost:8765.
+  Tokens ficam salvos localmente e renovam sozinhos.
+
+PASSO 3 — Verificar:
+
+  "<mesmo caminho>\devin.exe" mcp list
+
+  Dentro do Devin, o agente pode chamar mcp_list_servers /
+  mcp_list_tools para confirmar que figma-remote está ativo.
+
+OBSERVAÇÕES:
+  - Cada cliente MCP autentica separadamente: se já usou Figma MCP no
+    Cursor/Windsurf, precisa logar de novo no Devin.
+  - O Windows tem outro "devin" possivelmente conflitando — SEMPRE usar o
+    caminho completo do devin.exe acima.
+  - Rate limits: plano Starter tem cota de tool calls (diária).
+    get_metadata NÃO consome cota da mesma forma; get_design_context,
+    download_assets e get_screenshot consomem.
+
+--------------------------------------------------------------------------------
+6. COMO O DEVIN DEVE TRABALHAR COM O FIGMA (FLUXO)
+--------------------------------------------------------------------------------
+Antes de gerar código de uma tela:
+
+  1. Ler a skill obrigatória:
+     MCP resource skill://figma/figma-design-to-code/SKILL.md
+     (via mcp_read_resource no server figma-remote)
+
+  2. Chamar get_design_context com:
+     - fileKey: hOYTA6wFixdgxlNrEONDNE
+     - nodeId: <id do frame, ex: 9:40930>
+     - sessionId: valor retornado por create_session
+       (criar com create_session {fileKey, description})
+     - skillNames: "resource:figma-design-to-code"
+     → retorna código React/Tailwind + URLs de assets + screenshot
+
+  3. Baixar assets com download_assets (retorna rawImages JPEG/PNG
+     originais + svgAssets dos ícones + export PNG da tela)
+
+  4. Adaptar o código ao stack do projeto (NÃO copiar cegamente —
+     o output é protótipo visual em React/Tailwind)
+
+  5. get_metadata sem nodeId lista páginas; com nodeId devolve a
+     árvore XML do nó (não consome cota de render — usar bastante
+     para explorar sem gastar limite)
+
+--------------------------------------------------------------------------------
+7. ORDEM SUGERIDA DE IMPLEMENTAÇÃO
+--------------------------------------------------------------------------------
+1. Fundação: tokens (cores/fontes), header, rodapé, ícones, componentes
+   base (Botão, Campo, Produto card, Opção)
+2. Início → Loja → Produto (×3) → Criação (wizard)
+3. Acesso (Login/Cadastro) → Conta → Favoritos → Carrinho (drawer)
+4. Mimo Club → Checkout (4 etapas) → Sobre
+5. Refinar: estados (header após scroll, variantes)
+
+--------------------------------------------------------------------------------
+8. REGRAS IMPORTANTES
+--------------------------------------------------------------------------------
+- NÃO programar antes de autorização explícita do usuário
+- Usar nomes originais em português dos elementos como referência
+- Assets devem ser baixados para o projeto (nunca referenciar URLs
+  temporárias do Figma em código)
+- As fotos são fills raster — baixar os originais, não screenshots
+- Logo existe em alta resolução — usar o PNG original
+- Vídeo da home é placeholder — decidir com o usuário como tratar
+- Só existe design desktop 1440px — responsividade/mobile é decisão
+  de implementação a alinhar com o usuário
+================================================================================
