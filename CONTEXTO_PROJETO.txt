@@ -256,4 +256,38 @@ O QUE MUDOU DESDE 16/11:
     .figma_preview/  (referências do Figma — NÃO apagar)
     Modelos/         (PNGs de referência adicionais)
     CONTEXTO_PROJETO.txt  (este arquivo)
+
+--------------------------------------------------------------------------------
+10. REGRA DO ONEDRIVE — ARQUIVOS .js (IMPORTANTE)
+--------------------------------------------------------------------------------
+O OneDrive da escola (SESISENAISP) NÃO permite salvar arquivos .js na pasta
+sincronizada. Por isso:
+
+- Na pasta local (OneDrive), TODO arquivo JavaScript deve ser salvo como
+  .txt. Exemplo real: assets/js/main.js existe no GitHub, mas na pasta
+  local está como assets/js/main.txt (mesmo conteúdo).
+- No GitHub/repositório, manter SEMPRE a versão .js real — sem ela o
+  site não funciona para quem clonar.
+- REGRA PARA O DEVIN: sempre que for criar/editar/salvar arquivo .js
+  nesta pasta, salvar como .txt e avisar o usuário. Se o arquivo já
+  existir como .js no repo, a versão commitada continua .js.
+- ATENÇÃO ao testar localmente: index.html referencia assets/js/main.js,
+  que não existe na pasta local (só main.txt). Para preview local, será
+  preciso renomear temporariamente ou ajustar a referência — alinhar
+  com o usuário antes.
+================================================================================
+
+--------------------------------------------------------------------------------
+11. ATUALIZAÇÃO — 23/11/2026 (tarde): PÁGINA LOJA IMPLEMENTADA
+--------------------------------------------------------------------------------
+- Criada loja.html (frame Figma 9:41089 "Loja • Encontre seu momento").
+- Assets reais baixados do Figma para assets/img/loja-*.jpg (10 imagens:
+  banner + 9 fotos de produto, 1024x1024 / banner 1264x848).
+- style.css ganhou a seção "Loja": breadcrumb, banner de personalização,
+  pills de ocasião, filtros laterais, grid 3 colunas de produtos.
+- Cabçalho na Loja fica sempre creme (classe .page-loja no <body>).
+- HTML sem CSS/JS inline; JS continua externo (assets/js/main.js).
+- Links "Ver Mimo" apontam para produto.html (página ainda não criada).
+- Filtros/ordenação são visuais por enquanto (sem lógica de filtro real).
+- Commit/push direto no GitHub autorizado pelo usuário nesta tarefa.
 ================================================================================

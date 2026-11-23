@@ -1,3 +1,6 @@
 Thumbs.db
 Desktop.ini
 *.log
+
+# OneDrive da escola bloqueia .js — versao local fica como .txt
+assets/js/*.txt
