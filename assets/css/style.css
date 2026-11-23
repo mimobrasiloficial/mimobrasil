@@ -7,6 +7,7 @@
   --color-dourado: #CB9F77;
   --color-bege: #E8D0BA;
   --color-rosado: #F4E4DD;
+  --color-cacau: #39251E;
 
   --font-display: "EB Garamond", Georgia, serif;
   --font-ui: "Montserrat", system-ui, sans-serif;
@@ -917,6 +918,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pdp__thumb.is-active { border-color: var(--color-marrom); padding: 4px; }
 .pdp__thumb.is-active img { height: 130px; border-radius: 18px; }
 .pdp__thumb:hover { border-color: rgba(203, 159, 119, 0.8); }
+.pdp__main--dark { background: var(--color-cacau); }
 
 /* Informações e compra */
 .pdp__info {
@@ -1045,6 +1047,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .pdp__notes-text { font-size: 16px; line-height: 1.6; }
 .pdp__notes-small { font-size: 12px; line-height: 1.6; color: rgba(82, 47, 30, 0.7); }
+
+/* Notas do sabor — variante escura */
+.pdp__notes--dark { background: var(--color-cacau); }
+.pdp__notes--dark .chamada { color: var(--color-bege); }
+.pdp__notes--dark .pdp__notes-title { color: var(--color-creme); }
+.pdp__notes--dark .pdp__notes-text { color: var(--color-creme); }
+.pdp__notes--dark .pdp__notes-small { color: var(--color-bege); }
 
 /* Ingredientes e cuidado */
 .pdp__ingredients {
