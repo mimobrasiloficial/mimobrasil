@@ -8,6 +8,7 @@
   --color-bege: #E8D0BA;
   --color-rosado: #F4E4DD;
   --color-cacau: #39251E;
+  --color-rosa: #F6E0DF;
 
   --font-display: "EB Garamond", Georgia, serif;
   --font-ui: "Montserrat", system-ui, sans-serif;
@@ -174,6 +175,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .header__nav a.is-active::after { right: 0; }
 .site-header.is-scrolled .header__nav a { color: var(--color-marrom); }
 .site-header:not(.is-scrolled) .header__nav a { color: var(--color-creme); }
+.site-header:not(.is-scrolled) .header__logo img { filter: brightness(0) invert(1); }
 .site-header:not(.is-scrolled) .header__icon,
 .site-header:not(.is-scrolled) .header__account,
 .site-header:not(.is-scrolled) .header__cart { color: var(--color-creme); }
@@ -248,7 +250,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
    ============================================================ */
 .custom { position: relative; background: linear-gradient(180deg, #4a2c1b 0%, #522F1E 30%, #6b3f24 100%); padding-bottom: 76px; }
 .custom__inner {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 114px var(--margin-page) 0;
   display: flex;
@@ -411,7 +413,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
    Um pouco sobre nós
    ============================================================ */
 .about {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 80px auto 0;
   padding: 0 var(--margin-page);
   display: flex;
@@ -580,7 +582,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
    ============================================================ */
 @media (max-width: 1280px) {
   :root { --margin-page: 40px; }
-  .products, .section-head, .about, .values__grid, .moments__head, .moments__gallery, .footer__grid { max-width: none; }
+  .products, .section-head, .about, .custom__inner, .values__grid, .moments__head, .moments__gallery, .footer__grid, .store__content, .breadcrumb, .pdp, .pdp__ingredients, .pdp__reviews, .pdp__related { max-width: none; }
 }
 @media (max-width: 1100px) {
   .header__nav { display: none; }
@@ -601,14 +603,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding-bottom: 90px;
 }
 .store__content {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 var(--margin-page);
 }
 
 /* Caminho (breadcrumb) */
 .breadcrumb {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 40px auto 0;
   padding: 0 var(--margin-page);
   display: flex;
@@ -878,7 +880,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .store + .footer { margin-top: 0; }
 
 .pdp {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 28px var(--margin-page) 64px;
   display: flex;
@@ -919,6 +921,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pdp__thumb.is-active img { height: 130px; border-radius: 18px; }
 .pdp__thumb:hover { border-color: rgba(203, 159, 119, 0.8); }
 .pdp__main--dark { background: var(--color-cacau); }
+.pdp__main--rosa { background: var(--color-rosa); }
 
 /* Informações e compra */
 .pdp__info {
@@ -1023,6 +1026,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Notas do sabor */
 .pdp__notes {
+  max-width: 1440px;
+  margin: 0 auto;
   background: var(--color-rosado);
   display: flex;
   gap: 80px;
@@ -1054,10 +1059,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pdp__notes--dark .pdp__notes-title { color: var(--color-creme); }
 .pdp__notes--dark .pdp__notes-text { color: var(--color-creme); }
 .pdp__notes--dark .pdp__notes-small { color: var(--color-bege); }
+.pdp__notes--rosa { background: var(--color-rosa); }
 
 /* Ingredientes e cuidado */
 .pdp__ingredients {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 64px var(--margin-page);
   display: flex;
@@ -1089,7 +1095,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Avaliações */
 .pdp__reviews {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 16px var(--margin-page) 64px;
   display: flex;
@@ -1128,7 +1134,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Produtos relacionados */
 .pdp__related {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 var(--margin-page) 80px;
 }
