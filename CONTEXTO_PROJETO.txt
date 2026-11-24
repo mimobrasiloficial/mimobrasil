@@ -377,3 +377,13 @@ ATENÇÃO — criacao.html foi feita SEM get_design_context:
   imagem reais em assets/img/ (o projeto já não depende só dos 4
   assets originais do .figma_preview).
 ================================================================================
+
+- REGRA JS (definida pelo usuário em 24/11):
+    * assets/js/*.txt = fonte de edição local (OneDrive/Live Share).
+      Fica SÓ local — .gitignore ignora assets/js/*.txt.
+    * assets/js/*.js  = versão que vai para o GitHub/deploy.
+    * ANTES DE CADA DEPLOY: copiar .txt → .js (mesmo nome) e commitar
+      os .js. Nunca commitar os .txt.
+    * Os .js também existem localmente para o site funcionar no
+      navegador — manter ambos em sincronia.
+================================================================================
