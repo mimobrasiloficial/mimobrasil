@@ -47,12 +47,9 @@
     <!-- ===================== HERO / VÍDEO ===================== -->
     <section class="hero" aria-label="Apresentação em vídeo">
       <div class="hero__media">
-        <!-- TODO: substituir placeholder pelo vídeo real quando disponível -->
-        <div class="hero__placeholder" role="img" aria-label="Vídeo de apresentação da MIMO">
-          <button class="hero__play" aria-label="Reproduzir vídeo">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z"/></svg>
-          </button>
-        </div>
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de apresentação da MIMO">
+          <source src="assets/vid/mimo-hero.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 

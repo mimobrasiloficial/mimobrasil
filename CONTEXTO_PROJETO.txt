@@ -347,3 +347,33 @@ ATENÇÃO — criacao.html foi feita SEM get_design_context:
   resetar, rodar get_design_context no node 9:41834 (Criação) para
   validar textos/preços/fotos reais das opções — ver seção 12.
 ================================================================================
+
+--------------------------------------------------------------------------------
+9.1 ATUALIZAÇÃO — 24/11/2026
+--------------------------------------------------------------------------------
+
+- VÍDEO DO HERO: página Início agora usa assets/vid/mimo-hero.mp4
+  (autoplay, loop, muted, playsinline, object-fit cover). Placeholder
+  de vídeo e botão play removidos do HTML/CSS.
+
+- TRABALHO DO COLABORADOR (Live Share) — JÁ COMMITADO por outra sessão:
+    * Novas páginas: loja.html, criacao.html (wizard), produto.html,
+      produto-barra.html, produto-bombons.html
+    * Novas imagens em assets/img/ (loja-*.jpg, produto-*.jpg)
+    * style.css cresceu (~40KB) com estilos das novas páginas
+    * Commits no repo: d50f37e, 34368a1, 3ade267, d6990d5, bae3e1c,
+      a82681f, 106990e, a3d9b59, 4bb5d96
+    * Instagram do projeto: @mimobrasil.oficial
+
+- ATENÇÃO — POSSÍVEL PROBLEMA: assets/js/*.js foram renomeados para
+  .txt (main.txt, criacao.txt, produto.txt) e .gitignore agora ignora
+  assets/js/*.txt. Todos os HTML ainda referenciam assets/js/*.js,
+  ou seja, o JavaScript está QUEBRADO em todas as páginas (header
+  não reage ao scroll, favoritar/wizard não funcionam). Os .js
+  estão com skip-worktree no índice do git. PENDENTE: decidir com o
+  colaborador se volta a extensão .js ou se a abordagem mudou.
+
+- CONTEXTO PASTA: modelos de referência em Modelos/; assets de
+  imagem reais em assets/img/ (o projeto já não depende só dos 4
+  assets originais do .figma_preview).
+================================================================================

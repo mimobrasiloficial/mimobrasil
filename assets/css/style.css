@@ -219,31 +219,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
    Hero — vídeo placeholder (900px)
    ============================================================ */
 .hero { position: relative; height: 900px; }
-.hero__media, .hero__placeholder {
+.hero__media {
   position: absolute;
   inset: 0;
   background: linear-gradient(160deg, #3a2417 0%, #522F1E 55%, #6b3f24 100%);
 }
-.hero__placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.hero__play {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background: rgba(255, 253, 245, 0.14);
-  border: 1.5px solid rgba(255, 253, 245, 0.55);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-creme);
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-.hero__play svg { width: 30px; height: 30px; margin-left: 4px; }
-.hero__play:hover { transform: scale(1.08); background: rgba(255, 253, 245, 0.22); }
 
 /* ============================================================
    Monte seu Mimo (y900 → ondulação → fundo creme)
